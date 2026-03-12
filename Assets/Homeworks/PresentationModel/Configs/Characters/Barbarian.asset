@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6050564498d77e647bf592e7212ca9a7, type: 3}
+  m_Name: Barbarian
+  m_EditorClassIdentifier: 
+  _name: Grog
+  _description: I'm crazy machine for destroy
+  _startLevel: 16
+  _spriteAvatar: {fileID: 21300000, guid: 7c0892898786946a98a1057c9873611a, type: 3}
+  _characterStats:
+  - _name: Move Speed
+    _type: 1
+    _value: 28
+  - _name: Stamina
+    _type: 2
+    _value: 10
+  - _name: Dexterity
+    _type: 3
+    _value: 18
+  - _name: Intelligence
+    _type: 4
+    _value: 22
+  - _name: Damage
+    _type: 5
+    _value: 34
+  - _name: Regeneration
+    _type: 6
+    _value: 21
