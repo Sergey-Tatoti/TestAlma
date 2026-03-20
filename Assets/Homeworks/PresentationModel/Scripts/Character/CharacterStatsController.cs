@@ -6,16 +6,20 @@ public class CharacterStatsController
     public IReadOnlyReactiveProperty<List<CharacterStat>> Stats => _stats;
     private readonly ReactiveProperty<List<CharacterStat>> _stats = new();
 
-    public CharacterStatsController(List<CharacterStat> CharacterStat)
+    public CharacterStatsController(List<CharacterStat> initialStats)
     {
-        _stats.Value = CharacterStat;
+        _stats = new ReactiveProperty<List<CharacterStat>>(initialStats);
     }
 
     public void IncreaseStats()
     {
-        for (int i = 0; i < Stats.Value.Count; i++)
+        List<CharacterStat> currentStats = _stats.Value;
+
+        for (int i = 0; i < currentStats.Count; i++)
         {
-            Stats.Value[i].ChangeValue(Stats.Value[i].Value + 1);
+            currentStats[i].ChangeValue(currentStats[i].Value + 1);
         }
+
+        _stats.Value = new List<CharacterStat>(currentStats);
     }
 }

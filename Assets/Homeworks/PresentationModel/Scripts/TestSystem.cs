@@ -1,25 +1,27 @@
 using Sirenix.OdinInspector;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class TestSystem : MonoBehaviour
 {
-    private Character _character;
-    private CharacterViewModel _characterViewModel;
+    [SerializeField] private CharacterPopapView _characterPopapView;
+    [SerializeField] private CharacterInfoView _characterInfoView;
+    [SerializeField] private CharacterExperienceView _characterExperienceView;
+    [SerializeField] private CharacterStatsView _characterStatsView;
+    [SerializeField] private Character _character;
 
-    public event UnityAction<CharacterViewModel> ShowedInfoCharacter;
-    public event UnityAction ClosedInfoCharacter;
+    private List<IViewModel> _viewsModels = new();
 
     [Button]
-    public void ShowInfoCharacter(Character character)
+    public void ShowInfoCharacter()
     {
-        if (character != null)
-        {
-            _character = character;
-            _characterViewModel = new CharacterViewModel(_character);
+        if (_character == null)
+            return;
 
-            ShowedInfoCharacter?.Invoke(_characterViewModel);
-        }
+        _characterPopapView.SetInfo(new CharacterPopapViewModel(_character));
+        _characterInfoView.SetInfo(new CharacterInfoViewModel(_character));
+        _characterExperienceView.SetInfo(new CharacterExperienceViewModel(_character));
+        _characterStatsView.SetInfo(new CharacterStatsViewModel(_character));
     }
 
     [Button]
@@ -33,6 +35,6 @@ public class TestSystem : MonoBehaviour
     public void CloseInfoCharacter()
     {
         if (_character != null)
-            ClosedInfoCharacter?.Invoke();
+            _characterPopapView.CloseInfoCharacter();
     }
 }

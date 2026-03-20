@@ -752,9 +752,10 @@ GameObject:
   m_Component:
   - component: {fileID: 337933059}
   - component: {fileID: 337933061}
+  - component: {fileID: 337933062}
   - component: {fileID: 337933060}
   m_Layer: 5
-  m_Name: StatsInfoConteiner
+  m_Name: StatsInfoView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -811,6 +812,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337933058}
   m_CullTransparentMesh: 1
+--- !u!114 &337933062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337933058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71c360fbe88cb9e49bd3dc6109685cb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _countViewsInitialize: 6
+  _statInfoViewPrefab: {fileID: 8356108859570681848, guid: 47bd315ce74426242bb381247f00f55a, type: 3}
+  _conteiner: {fileID: 337933059}
 --- !u!1 &539864193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,7 +1185,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1027314663}
   - component: {fileID: 1027314665}
-  - component: {fileID: 1027314664}
   m_Layer: 5
   m_Name: CharacterPopapView
   m_TagString: Untagged
@@ -1197,21 +1212,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1027314664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1027314662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2683071eb5540443810d79318af7cca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _countViewsInitialize: 6
-  _statInfoViewPrefab: {fileID: 8356108859570681848, guid: 47bd315ce74426242bb381247f00f55a, type: 3}
-  _conteiner: {fileID: 337933059}
 --- !u!114 &1027314665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1224,9 +1224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119043d64d3bf434c8bb7c6a3738510f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterInfoView: {fileID: 2147204529}
-  _experienceView: {fileID: 665522463}
-  _statInfoController: {fileID: 1027314664}
   _panelProfile: {fileID: 1884451017}
   _buttonLevelUp: {fileID: 2000155376}
   _buttonExit: {fileID: 1269390715}
@@ -2342,6 +2339,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da11acf82eafe074b8ceb5f34c3b4ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterPopapView: {fileID: 1027314665}
+  _characterInfoView: {fileID: 2147204529}
+  _characterExperienceView: {fileID: 665522463}
+  _characterStatsView: {fileID: 337933062}
+  _character: {fileID: 0}
 --- !u!1 &2147204527
 GameObject:
   m_ObjectHideFlags: 0
